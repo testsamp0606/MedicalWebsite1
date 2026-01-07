@@ -51,6 +51,7 @@ export default function AppointmentPage() {
     defaultValues: {
       patientName: '',
       phone: '',
+      doctor: 'any',
     },
   });
   
@@ -117,7 +118,7 @@ export default function AppointmentPage() {
                         onValueChange={(value) => {
                           field.onChange(value);
                           setSelectedDept(value);
-                          form.setValue('doctor', '');
+                          form.setValue('doctor', 'any');
                         }} 
                         defaultValue={field.value}
                       >
@@ -151,7 +152,7 @@ export default function AppointmentPage() {
                           </SelectTrigger>
                         </FormControl>
                         <SelectContent>
-                           <SelectItem value="">Any available doctor</SelectItem>
+                           <SelectItem value="any">Any available doctor</SelectItem>
                           {availableDoctors.map((doc) => (
                             <SelectItem key={doc.id} value={doc.id}>
                               {doc.name}
