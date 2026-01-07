@@ -2,7 +2,14 @@
 
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from '@/components/ui/sheet';
 import {
   Hospital,
   Menu,
@@ -89,6 +96,12 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
+            <SheetHeader>
+              <SheetTitle className="sr-only">Menu</SheetTitle>
+              <SheetDescription className="sr-only">
+                Main navigation links for MediSite.
+              </SheetDescription>
+            </SheetHeader>
             <div className="flex flex-col gap-6 p-4">
               <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-accent">
                 <Stethoscope className="h-7 w-7 text-accent" />
