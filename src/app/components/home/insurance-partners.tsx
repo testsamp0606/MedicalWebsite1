@@ -1,7 +1,5 @@
 'use client';
 
-import { Globe } from 'lucide-react';
-
 const partners = [
   "Alliance", "Blue Cross", "Cigna", "UnitedHealth", "Aetna", "Humana", "MetLife", "Prudential",
   "Star Health", "Max Bupa", "ICICI Lombard", "HDFC Ergo"
@@ -18,20 +16,45 @@ export function InsurancePartners() {
           </p>
         </div>
         <div className="relative w-full overflow-hidden">
-          <div className="flex animate-scroll group-hover:paused">
+          <div className="flex animate-scroll-mobile md:animate-scroll-desktop group-hover:paused">
             {[...partners, ...partners].map((partner, index) => (
-              <div key={index} className="flex-shrink-0 w-48 h-20 flex items-center justify-center mx-4 my-2 p-4 bg-card border rounded-lg shadow-sm">
-                <p className="font-semibold text-muted-foreground">{partner}</p>
+              <div key={index} className="flex-shrink-0 w-36 md:w-48 h-20 flex items-center justify-center mx-2 md:mx-4 my-2 p-4 bg-card border rounded-lg shadow-sm">
+                <p className="font-semibold text-muted-foreground text-center text-sm">{partner}</p>
               </div>
             ))}
           </div>
           <style jsx>{`
-            @keyframes scroll {
+            @keyframes scroll-desktop {
               from { transform: translateX(0); }
               to { transform: translateX(-50%); }
             }
-            .animate-scroll {
-              animation: scroll 40s linear infinite;
+            .animate-scroll-desktop {
+              animation: scroll-desktop 40s linear infinite;
+            }
+             @keyframes scroll-mobile {
+              from { transform: translateX(0); }
+              to { transform: translateX(-50%); }
+            }
+            .animate-scroll-mobile {
+              animation: scroll-mobile 30s linear infinite;
+            }
+
+            @media (max-width: 767px) {
+              .animate-scroll-desktop {
+                animation: none;
+              }
+              .animate-scroll-mobile {
+                 animation: scroll-mobile 30s linear infinite;
+              }
+            }
+
+             @media (min-width: 768px) {
+                .animate-scroll-mobile {
+                    animation: none;
+                }
+                .animate-scroll-desktop {
+                    animation: scroll-desktop 40s linear infinite;
+                }
             }
           `}</style>
         </div>
