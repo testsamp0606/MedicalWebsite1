@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 import Image from 'next/image';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { CheckCircle, UserMd, Clock } from 'lucide-react';
+import { CheckCircle, User, Clock } from 'lucide-react';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -75,7 +75,7 @@ export default function DepartmentDetailPage({ params }: { params: { slug: strin
             <Card>
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <UserMd className="h-6 w-6 text-primary" />
+                  <User className="h-6 w-6 text-primary" />
                   Our Specialists
                 </CardTitle>
               </CardHeader>
