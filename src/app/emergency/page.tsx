@@ -3,6 +3,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { PlaceHolderImages } from '@/lib/placeholder-images';
 import { Phone, Ambulance, MapPin, AlertTriangle } from 'lucide-react';
 import Image from 'next/image';
+import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 
 export default function EmergencyPage() {
     const bannerImage = PlaceHolderImages.find(p => p.id === 'emergency-banner');
