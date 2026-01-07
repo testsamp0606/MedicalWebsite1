@@ -1,5 +1,5 @@
 import type { LucideIcon } from 'lucide-react';
-import { HeartPulse, Brain, Bone, Baby, Stethoscope, Microscope, ShieldPlus, Ambulance, TestTube2, PersonStanding } from 'lucide-react';
+import { HeartPulse, Brain, Bone, Baby, Stethoscope, Microscope, ShieldPlus, Ambulance, TestTube2, PersonStanding, Users, Activity, User } from 'lucide-react';
 
 export type Department = {
   id: string;
@@ -164,6 +164,24 @@ export const healthPackages = [
       features: ["Advanced Heart Care Tests", "Thyroid Profile", "Vitamin D & B12", "Kidney Function Test", "Liver Function Test"],
       icon: PersonStanding,
     },
+    {
+      name: "Women's Wellness",
+      price: "3,999",
+      features: ["Complete Blood Count", "Pap Smear", "Mammogram", "Ultrasound Pelvis", "Gynaecologist Consultation"],
+      icon: Activity,
+    },
+    {
+      name: "Senior Citizen (Male)",
+      price: "5,999",
+      features: ["Full Body Checkup Tests", "PSA (Prostate Specific Antigen)", "Bone Densitometry", "Geriatrician Consultation"],
+      icon: User,
+    },
+    {
+      name: "Family First Package",
+      price: "12,999",
+      features: ["Basic wellness for 2 adults and 2 children", "Customizable add-ons", "Pediatrician and Physician Consultation"],
+      icon: Users,
+    }
   ];
 
 export const getDepartmentBySlug = (slug: string) => departments.find(d => d.slug === slug);

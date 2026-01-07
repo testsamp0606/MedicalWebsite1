@@ -5,9 +5,9 @@ import { Button } from '@/components/ui/button';
 import {
   Sheet,
   SheetContent,
-  SheetDescription,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
   SheetTrigger,
 } from '@/components/ui/sheet';
 import {
@@ -75,7 +75,7 @@ export function Header() {
               <Link
                 href={link.href}
                 className={cn(
-                  'text-sm font-medium',
+                  'text-sm font-medium transition-colors hover:text-accent',
                   pathname === link.href ? 'text-accent' : 'text-foreground'
                 )}
               >
@@ -96,12 +96,10 @@ export function Header() {
             </Button>
           </SheetTrigger>
           <SheetContent side="left">
-            <SheetHeader>
-              <SheetTitle className="sr-only">Menu</SheetTitle>
-              <SheetDescription className="sr-only">
-                Main navigation links for MediSite.
-              </SheetDescription>
-            </SheetHeader>
+             <SheetHeader className="sr-only">
+               <SheetTitle>Menu</SheetTitle>
+               <SheetDescription>Main navigation links for MediSite.</SheetDescription>
+             </SheetHeader>
             <div className="flex flex-col gap-6 p-4">
               <Link href="/" className="flex items-center gap-2 font-headline text-2xl font-bold text-accent">
                 <Stethoscope className="h-7 w-7 text-accent" />
@@ -119,6 +117,7 @@ export function Header() {
                     <Link
                       href={link.href}
                       className={cn(
+                        'transition-colors hover:text-accent',
                         pathname === link.href ? 'text-accent' : 'text-foreground'
                       )}
                     >
